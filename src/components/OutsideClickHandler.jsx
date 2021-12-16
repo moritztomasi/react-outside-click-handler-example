@@ -1,14 +1,14 @@
 import React, { useEffect, useRef } from "react";
 
-function OutsideAlerter({ children, onClickOutside }) {
+function OutsideClickHandler({ children, onClickOutside }) {
   const wrapperRef = useRef(null);
 
-  useOutsideAlerter(wrapperRef, onClickOutside);
+  useOutsideClickHandler(wrapperRef, onClickOutside);
 
   return <div ref={wrapperRef}>{children}</div>;
 }
 
-function useOutsideAlerter(ref, onClickOutside) {
+function useOutsideClickHandler(ref, onClickOutside) {
   useEffect(() => {
     function handleClickOutside(event) {
       if (ref.current != null && !ref.current.contains(event.target)) {
@@ -24,4 +24,4 @@ function useOutsideAlerter(ref, onClickOutside) {
   }, [onClickOutside, ref]);
 }
 
-export default OutsideAlerter;
+export default OutsideClickHandler;
