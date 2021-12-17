@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from "react";
 
 function OutsideClickHandler({ children, onClickOutside }) {
-  const wrapperRef = useRef(null);
+  const ref = useRef(null);
 
-  useOutsideClickHandler(wrapperRef, onClickOutside);
+  useOutsideClickHandler(ref, onClickOutside);
 
-  return <div ref={wrapperRef}>{children}</div>;
+  return <div ref={ref}>{children}</div>;
 }
 
 function useOutsideClickHandler(ref, onClickOutside) {
